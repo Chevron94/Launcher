@@ -86,7 +86,7 @@ namespace Launcher
             }
             else
             {
-                System.IO.StreamReader UserVersionReader = new System.IO.StreamReader(@"mods\Group9\Version.txt");
+                System.IO.StreamReader UserVersionReader = new System.IO.StreamReader(USER_VERSION_FILE);
                 USER_VERSION = (UserVersionReader.ReadLine()).Trim();
                 T_USERVERSION.Text = USER_VERSION;
                 UserVersionReader.Close();
