@@ -18,8 +18,8 @@ namespace Launcher
         WebClient CLIENT; // Класс для загрузки файлов
         const string SERVER_VERSION_INTERNET_URL = "http://9groupmod.100ms.ru/updates/ServerVersion.txt"; 
         
-        const string USER_VERSION_FILE = @"mods\Group9\Version.txt";
-        const string SERVER_VERSION_FILE = @"mods\Group9\ServerVersion.txt";
+        const string USER_VERSION_FILE = @"mods\Group9\Data\Version.txt";
+        const string SERVER_VERSION_FILE = @"mods\Group9\Updates\ServerVersion.txt";
         const string EXTRACTING_PATH = @"mods\Group9\Data";
 
         string USER_VERSION; // Версия пользователя
@@ -40,6 +40,8 @@ namespace Launcher
             new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);    // Меняем событие загрузки для отображения прогресса
             if (!System.IO.Directory.Exists(@"mods\Group9\Updates"))
                 System.IO.Directory.CreateDirectory(@"mods\Group9\Updates");
+            if (!System.IO.Directory.Exists(@"mods\Group9\Data"))
+                System.IO.Directory.CreateDirectory(@"mods\Group9\Data");
 
         }
         public void SwitchText(bool value) // Видим - не видим)
