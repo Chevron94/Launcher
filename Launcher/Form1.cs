@@ -188,9 +188,7 @@ namespace Launcher
 
             DownLoadFile(DOWNLOAD_URL, UPDATE_FILE_PATH); // скачиваем архив
 
-          /*  while (CLIENT.IsBusy)   // см. выше
-            { Application.DoEvents(); }*/
-            while(new FileInfo(UPDATE_FILE_PATH).Length<length)
+            while (CLIENT.IsBusy)   // см. выше
             { Application.DoEvents(); }
 
             if (Cancel) // Если отмена
