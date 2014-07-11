@@ -159,7 +159,9 @@ namespace Launcher
             WebRequest rq = WebRequest.Create(URL);
             rq.Method = "HEAD";
             HttpWebResponse resp = (HttpWebResponse)rq.GetResponse();
-            return Convert.ToInt32(resp.ContentLength);
+            int Length = Convert.ToInt32(resp.ContentLength);
+            resp.Close();
+            return Length;
         }
         private void Update_Click(object sender, EventArgs e)   // обновление
         {
